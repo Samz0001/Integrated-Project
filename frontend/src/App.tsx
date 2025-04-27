@@ -46,7 +46,7 @@ function App() {
       // save history if logged in
       const token = localStorage.getItem('token');
       if (token) {
-        await fetch('http://localhost:5000/api/save_emotion', {
+        await fetch('http://localhost:8000/api/save_emotion', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -64,13 +64,13 @@ function App() {
   };
 
   const startAnalysis = () =>
-    fetchSongs('http://localhost:5000/api/detect_emotion', '');
+    fetchSongs('http://localhost:8000/api/detect_emotion', '');
 
   const analyzeImage = () => {
     if (!uploadedImage) return;
     const fd = new FormData();
     fd.append('image', uploadedImage);
-    fetchSongs('http://localhost:5000/api/detect_emotion_from_image', fd);
+    fetchSongs('http://localhost:8000/api/detect_emotion_from_image', fd);
     setUploadedImage(null);
     setImagePreview(null);
     if (fileInputRef.current) fileInputRef.current.value = '';
@@ -109,7 +109,7 @@ function App() {
                         />
                       ) : (
                         <img
-                          src="http://localhost:5000/api/video_feed"
+                          src="http://localhost:8000/api/video_feed"
                           alt="Webcam"
                           className="w-full h-full object-cover rounded-lg"
                         />
