@@ -18,7 +18,7 @@ const EmotionHistory: React.FC = () => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    fetch("http://localhost:5000/api/history", {
+    fetch("http://localhost:8000/api/history", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -28,7 +28,7 @@ const EmotionHistory: React.FC = () => {
 
   const shareMood = () => {
     const token = localStorage.getItem("token");
-    fetch("http://localhost:5000/api/share_mood", {
+    fetch("http://localhost:8000/api/share_mood", {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` },
     })

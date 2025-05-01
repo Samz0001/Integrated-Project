@@ -21,7 +21,7 @@ const Login: React.FC = () => {
     try {
       await login(username, password);
       toast.success('✅ Logged in successfully!');
-      setTimeout(() => navigate('/'), 1000);
+      setTimeout(() => navigate('/app'), 1000);
     } catch (err) {
       toast.error('❌ Invalid username or password');
       setError('Invalid username or password');
