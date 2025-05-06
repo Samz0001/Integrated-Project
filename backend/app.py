@@ -33,12 +33,13 @@ camera = cv2.VideoCapture(0)
 
 YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")
 
-# Map detected emotions to alternate search terms
 EMOTION_MAPPING = {
-    "sad": "happy",
-    "happy": "party",
-    "angry": "calm relaxing",
-    "neutral": "calm motivation"
+    "sad": "happy somgs hindi and english",
+    "happy": "party songs hindi and english",
+    "angry": "calm relaxing songs hindi and english",
+    "neutral": "calm motivation",
+    "fear": "relax songs hindi",
+    "surprise": "excited songs hindi"
 }
 
 def fetch_youtube_videos(query, max_results=25):
@@ -111,7 +112,6 @@ def detect_emotion():
     emotion = emotion_recognizer.predict_emotion(frame)
     print(f"[INFO] Detected Emotion: {emotion}")
 
-    # Apply mapping before fetching videos
     query = EMOTION_MAPPING.get(emotion.lower(), emotion)
     videos = fetch_youtube_videos(query)
     return jsonify({"emotion": emotion, "videos": videos})

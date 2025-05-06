@@ -28,7 +28,7 @@ const SignUp: React.FC = () => {
     try {
       await signup(username, password); // Important: signup must throw errors properly
       toast.success('✅ Account created successfully, You can Login Now!');
-      setTimeout(() => navigate('/'), 1000);
+      setTimeout(() => navigate('/login'), 1000);
     } catch (err: any) {
       setError(err.message);
       toast.error(`❌ ${err.message}`);

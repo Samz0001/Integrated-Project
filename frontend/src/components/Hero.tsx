@@ -20,14 +20,7 @@ const Hero: React.FC = () => {
               <button  onClick={()=> navigate('/app')} className="px-8 py-4 bg-purple-500 hover:bg-purple-600 rounded-lg text-white font-medium transition-all transform hover:scale-105 shadow-lg" >
                 Try it now
               </button>
-              <a
-  href="https://github.com/Samz0001/Integrated-Project"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-block px-8 py-4 bg-transparent border border-purple-300 hover:bg-purple-800/30 rounded-lg text-white font-medium transition-all text-center"
->
-  Source Code
-</a>
+           
             </div>
           </div>
           
